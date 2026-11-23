@@ -1,0 +1,31 @@
+{
+  "realm": "quill",
+  "enabled": true,
+  "displayName": "Quill local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "quill-web",
+      "name": "Quill Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "quill-owners" },
+    { "name": "quill-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "quill-contributors" },
+    { "name": "quill-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
